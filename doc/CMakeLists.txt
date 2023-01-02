@@ -1,17 +1,3 @@
-find_program(DOXYGEN doxygen)
-if (NOT DOXYGEN)
-  message(STATUS "Target 'doc' disabled (requires doxygen)")
-  return ()
-endif ()
-
-find_package(PythonInterp QUIET REQUIRED)
-
-add_custom_target(doc
-  COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/build.py
-                               ${FMT_VERSION}
-  SOURCES api.rst syntax.rst usage.rst build.py conf.py _templates/layout.html)
-
-include(GNUInstallDirs)
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html/
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/doc/fmt OPTIONAL
-        PATTERN ".doctrees" EXCLUDE)
+version https://git-lfs.github.com/spec/v1
+oid sha256:101be7ff4ad0cf3020e2ae77fb211fe407132602989c95e0bc7a394670dd94be
+size 569
